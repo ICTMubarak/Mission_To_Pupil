@@ -1,2 +1,1 @@
-
-        if(tmpSum==sum){
+i++;
