@@ -5,18 +5,20 @@ map<int, int> mp;
 int main(){
 
     int n; cin>>n;
-    int a[n];
+    vector<int> v(n);
     for(int i=0;i<n;i++){
-        cin>>a[i];
-        mp[a[i]]++;
+        cin>>v[i];
     } 
+
+    sort(v.begin(),v.end());
+
 
     int t; cin>>t;
     while(t--){
         int x,y; cin>>x>>y;
-        int ans=0;
-        for(int i=x;i<=y;i++) ans=ans+mp[i];
-        cout<<ans<<" ";
+        int l = (lower_bound(v.begin(),v.end(),x))-v.begin();
+        int r = (upper_bound(v.begin(),v.end(),y))-v.begin();
+        cout<<r-l<<" ";
     }
 
     return 0;
