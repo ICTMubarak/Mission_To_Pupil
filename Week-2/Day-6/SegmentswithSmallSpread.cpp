@@ -11,7 +11,6 @@ int main(){
     map<int, int> mp;
     while(r<n){
         mp[a[r]]++;
-        cout<<mp.size()<<'\n';
         if(mp.size()<=k) {
              ans=ans+(r-l+1);
              r++;
